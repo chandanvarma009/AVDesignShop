@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="FileChooserViewController">
+            <connections>
+                <outlet property="androidButton" destination="zmf-8e-n6Q" id="sFc-ha-5iw"/>
+                <outlet property="iOSButton" destination="Guv-np-jaj" id="XBU-EM-YZ8"/>
+                <outlet property="iconPathTextField" destination="A3S-a1-SRT" id="IUW-T2-4Jw"/>
+                <outlet property="saveToPathTextField" destination="Fe8-Lr-SCB" id="eie-JA-6DX"/>
+                <outlet property="scaleView" destination="c6D-M4-Ec8" id="pls-a6-6jz"/>
+                <outlet property="selectPath" destination="CoR-wX-tRG" id="toN-9v-3pS"/>
+                <outlet property="textField" destination="Zr7-xM-oq8" id="ybL-w0-3xc"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="windowsButton" destination="iLG-Nv-NBH" id="LdW-L1-DG1"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="586" height="299"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="c6D-M4-Ec8" userLabel="Scale View">
+                    <rect key="frame" x="0.0" y="0.0" width="586" height="299"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RjE-E7-ba0">
+                            <rect key="frame" x="16" y="174" width="297" height="32"/>
+                            <buttonCell key="cell" type="push" title="Select Icon (preferred size 1024 and 2048)" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kw8-Eb-ADb">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" size="13" name="AvenirNext-Regular"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="chooseFileAction:" target="-2" id="moY-kn-u6I"/>
+                            </connections>
+                        </button>
+                        <button fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Guv-np-jaj">
+                            <rect key="frame" x="20" y="67" width="121" height="18"/>
+                            <buttonCell key="cell" type="check" title="iOS" bezelStyle="regularSquare" imagePosition="left" alignment="center" state="on" inset="2" id="A7X-Zc-5X4">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="deviceSelection:" target="-2" id="Wr0-wG-Ca1"/>
+                            </connections>
+                        </button>
+                        <button fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="zmf-8e-n6Q">
+                            <rect key="frame" x="217" y="67" width="121" height="18"/>
+                            <buttonCell key="cell" type="check" title="Android" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="cr1-3Y-ZJ0">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="deviceSelection:" target="-2" id="773-Pn-DUZ"/>
+                            </connections>
+                        </button>
+                        <button fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="iLG-Nv-NBH">
+                            <rect key="frame" x="414" y="67" width="121" height="18"/>
+                            <buttonCell key="cell" type="check" title="Windows" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="J9j-BA-eJw">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="deviceSelection:" target="-2" id="C19-yt-AkC"/>
+                            </connections>
+                        </button>
+                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zr7-xM-oq8">
+                            <rect key="frame" x="315" y="216" width="218" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Icon name" drawsBackground="YES" id="Yih-1W-FF2">
+                                <font key="font" size="11" name="AvenirNext-Regular"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vs4-or-GAa">
+                            <rect key="frame" x="20" y="219" width="289" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter Icon Name (optional):" id="fmh-Al-OOC">
+                                <font key="font" size="11" name="AvenirNext-Bold"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sM-23-mp8">
+                            <rect key="frame" x="18" y="104" width="342" height="19"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Select Device for which you want to generate Icons:" id="hjJ-4x-lRY">
+                                <font key="font" size="11" name="AvenirNext-Bold"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CoR-wX-tRG">
+                            <rect key="frame" x="14" y="142" width="299" height="32"/>
+                            <buttonCell key="cell" type="push" title="Select Path to Save Scaled Image" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WZW-Bk-MXX">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" size="13" name="AvenirNext-Regular"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="selectPath:" target="-2" id="psc-ol-hT2"/>
+                            </connections>
+                        </button>
+                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-Lr-SCB">
+                            <rect key="frame" x="315" y="149" width="218" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="kMk-WK-xcI">
+                                <font key="font" size="11" name="AvenirNext-Regular"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="76G-ai-Lxs">
+                            <rect key="frame" x="253" y="13" width="81" height="32"/>
+                            <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5D0-al-uSu">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" size="13" name="AvenirNext-Regular"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="generateAction:" target="-2" id="qPI-Qi-Lqw"/>
+                            </connections>
+                        </button>
+                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A3S-a1-SRT">
+                            <rect key="frame" x="315" y="180" width="218" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="Jt0-sV-KWn">
+                                <font key="font" size="11" name="AvenirNext-Regular"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="c6D-M4-Ec8" secondAttribute="trailing" id="Cjh-4k-MfR"/>
+                <constraint firstAttribute="bottom" secondItem="c6D-M4-Ec8" secondAttribute="bottom" id="JXE-g9-Yu1"/>
+                <constraint firstItem="c6D-M4-Ec8" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="T7d-ag-bfi"/>
+                <constraint firstItem="c6D-M4-Ec8" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="qIW-tG-nC7"/>
+            </constraints>
+            <point key="canvasLocation" x="192" y="167.5"/>
+        </customView>
+    </objects>
+</document>
